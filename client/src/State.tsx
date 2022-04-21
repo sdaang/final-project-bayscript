@@ -5,6 +5,11 @@ import { List, Map } from 'immutable';
 import { PianoInstrument } from './instruments/Piano';
 import { WaveformVisualizer } from './visualizers/Waveform';
 
+// import { NaelInstrument } from './instruments/NaelInstrument';
+
+// import { KalimbaInstrument } from './instruments/KalimbaInstrument';
+import { KalimbaWaveformVisualizer } from './visualizers/KalimbaWaveform';
+
 
 /** ------------------------------------------------------------------------ **
  * The entire application state is stored in AppState.
@@ -21,7 +26,7 @@ const instruments = List([PianoInstrument]);       // similar to Instrument[]
  * Start with the default waveform visualizer.
  * Add your visualizers to this list.
  */
-const visualizers = List([WaveformVisualizer]);    // similar to Visualizer[]
+const visualizers = List([WaveformVisualizer,KalimbaWaveformVisualizer]);    // similar to Visualizer[]
 
 
 /**
