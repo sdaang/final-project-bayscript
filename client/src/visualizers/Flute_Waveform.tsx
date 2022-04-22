@@ -39,6 +39,7 @@ export const WaveformVisualizerFlute = new Visualizer(
 
       let circleColor = 'black';
       p5.fill(circleColor);
+    //   p5.translate(width/2, height/2);
       p5.circle(50, 50, 50); 
       p5.circle(100, 100, 500); 
 
