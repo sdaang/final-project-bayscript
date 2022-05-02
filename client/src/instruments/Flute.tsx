@@ -2,11 +2,18 @@
 import * as Tone from 'tone';
 import classNames from 'classnames';
 import { List, Range } from 'immutable';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 // project imports
 import { Instrument, InstrumentProps } from '../Instruments';
+import { RecursivePartial } from "tone/Tone/core/util/Interface";
+import { OmniOscillatorOptions } from "tone/Tone/source/oscillator/OscillatorInterface";
 
+/** ------------------------------------------------------------------------ **
+ * References:
+ * https://tonejs.github.io/docs/14.7.77/Synth.html
+ * 
+ */
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Piano.
  ** ------------------------------------------------------------------------ */
@@ -119,24 +126,37 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
   const setOscillator = (newType: Tone.ToneOscillatorType) => {
     setSynth(oldSynth => {
       oldSynth.disconnect();
-
       return new Tone.Synth({
-        oscillator: { type: newType } as Tone.OmniOscillatorOptions,
-      }).toDestination();
+        "volume": 5,
+        "portamento": 0,
+        "detune": 0,
+        "envelope": {
+            "attack": 5,
+            "attackCurve": "cosine",
+            "decay": 1,
+            "decayCurve": "exponential",     //The shape of the decay either "linear" or "exponential"
+            "release": 5,
+            "releaseCurve": "exponential",
+            "sustain": 0
+        },
+        "oscillator": {
+            "partialCount": 4,
+            "partials": [ 0.0000000000000000001,
+                0.0000555,
+                0.0077,
+                1
+            ],
+            "phase": 3,
+            "type": "fatcustom",
+            "count": 5,
+            "spread": 1
+        } as RecursivePartial<OmniOscillatorOptions>,
+    }).toDestination();
     });
   };
 
   const oscillators: List<OscillatorType> = List([
     'sine',
-    'sawtooth',
-    'square',
-    'triangle',
-    'fmsine',
-    'fmsawtooth',
-    'fmtriangle',
-    'amsine',
-    'amsawtooth',
-    'amtriangle',
   ]) as List<OscillatorType>;
 
   return (
