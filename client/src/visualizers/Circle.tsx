@@ -19,6 +19,7 @@ export const CircleVisualizer = new Visualizer(
     // const g = p5.random(255);
     // const b = p5.random(255);
     // p5.stroke(r,g,b); //comment it out if you have photosensitive epilepsy
+    // p5.stroke(255,255,255,255);
     p5.stroke(255,255,0);
     p5.strokeWeight(dim * 0.005);
     p5.noFill();
