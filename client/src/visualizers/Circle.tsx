@@ -16,9 +16,13 @@ export const CircleVisualizer = new Visualizer(
     const dim = Math.min(width, height);
 
     p5.background(0, 0, 0, 255);
-
-    p5.strokeWeight(dim * 0.01);
-    p5.stroke(255, 255, 255, 255);
+    // const r = p5.random(255);
+    // const g = p5.random(255);
+    // const b = p5.random(255);
+    // p5.stroke(r,g,b); //comment it out if you have photosensitive epilepsy
+    // p5.stroke(255,255,255,255);
+    p5.stroke(255,255,0);
+    p5.strokeWeight(dim * 0.005);
     p5.noFill();
     p5.translate(width/2, height/2);
 
