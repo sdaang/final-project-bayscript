@@ -14,6 +14,7 @@ export const CircleVisualizer = new Visualizer(
     const width = window.innerWidth;
     const height = window.innerHeight / 2;
     const dim = Math.min(width, height);
+
     p5.background(0, 0, 0, 255);
     // const r = p5.random(255);
     // const g = p5.random(255);
@@ -23,14 +24,14 @@ export const CircleVisualizer = new Visualizer(
     p5.stroke(255,255,0);
     p5.strokeWeight(dim * 0.005);
     p5.noFill();
-    p5.translate((width/2.5), height/2);
+    p5.translate(width/2, height/2);
 
     const values = analyzer.getValue();
     p5.beginShape();
-    for (let i = 0; i < 180; i++) {
+    for (let i = 0; i <= 180; i++) {
       //const amplitude = values[i] as number;
-      const index = p5.floor(p5.map(i, 0, 180, 0, values.length/10));
-      const radius = p5.map(values[index] as number, -0.5, 1, 150, 350);
+      const index = p5.map(i, 0, 180, 0, values.length-1);
+      const radius = p5.map(values[index] as number, -1, 1, 150, 350);
       const x = radius * Math.sin(i);
       const y = radius * Math.cos(i);
       // Place vertex
