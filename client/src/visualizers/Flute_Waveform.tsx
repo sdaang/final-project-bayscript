@@ -7,6 +7,11 @@ import { couldStartTrivia } from "typescript";
 // project imports
 import { Visualizer } from "../Visualizers";
 
+// Information ---------------------------------------------------------------------
+// Name:       Sabrina Dang
+// Instrument: Flute
+// ---------------------------------------------------------------------------------
+
 // References
 // https://p5js.org/examples/simulate-particle-system.html
 // https://p5js.org/reference/#/p5/quad

@@ -1,0 +1,48 @@
+#flute{
+    padding-top: 15px;
+    background-image: url("./img/flute_render.png");
+    /*if this isn't here, background duplicated itself within the container, I had 4 flutes lol*/
+    background-repeat: no-repeat;
+}
+
+
+.fluteKeys:active{
+    box-shadow: 
+    12px 12px 16px 0 rgba('black');
+}
+
+.fluteOscillatorBtns{
+    font-family: 'Brush Script MT', cursive;
+    color: black;
+    font-size: 30px;
+    background-color: white;
+    opacity: 0.6;
+    box-shadow: 10px 5px 5px black;
+}
+
+
+.metaDataPlacement{
+    color:gray;
+    margin-left: 10px;
+    
+}
+
+.button{
+   transition-duration: 0.3s; 
+   position: absolute;
+   top: 78%;
+   left: 50%;
+   width: fit-content;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+.button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: gray;
+    color: white;
+    border-color: gray;
+    border-radius: 2px;
+    cursor: pointer;
+    
+}
