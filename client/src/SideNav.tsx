@@ -8,7 +8,6 @@ import {
   RadioButtonChecked20,
   Music20,
 } from "@carbon/icons-react";
-import Modal from "./Components/Modal";
 import "./flute.css";
 
 // project imports
