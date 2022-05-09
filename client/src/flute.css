@@ -46,3 +46,51 @@
     cursor: pointer;
     
 }
+
+.songSearchArea{
+    margin-left: 5%;
+}
+
+.songSearchTitle{
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 0%;
+}
+
+.userInputBox{
+    width: 65%;
+}
+
+
+.searchBtn{
+    margin: 5px;
+}
+
+.searchBtn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: gray;
+    color: white;
+    border-color: gray;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.songLine{
+    white-space: normal;
+}
+
+
+/* .modal-container{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 8;
+} */
+
+.modalBackground{
+    background-color: gray;
+    width: 600px;
+}
