@@ -1,15 +1,18 @@
 // 3rd party library imports
 import classNames from "classnames";
 import { List } from "immutable";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import {
   RadioButton20,
   RadioButtonChecked20,
   Music20,
 } from "@carbon/icons-react";
+import Modal from "./Components/Modal";
+import "./flute.css";
 
 // project imports
+//import Modal from "./Components/Modal";
 import { DispatchAction } from "./Reducer";
 import { AppState } from "./State";
 import { Instrument } from "./Instruments";
@@ -61,7 +64,7 @@ export function SideNav({ state, dispatch }: SideNavProps): JSX.Element {
         <InstrumentsNav state={state} dispatch={dispatch} />
         <VisualizersNav state={state} dispatch={dispatch} />
         <SongsNav state={state} dispatch={dispatch} />
-        <SongsModalWindow state={state} dispatch={dispatch} />
+        <SongSearch state={state} dispatch={dispatch} />
       </div>
     </div>
   );
@@ -170,31 +173,70 @@ function SongsNav({ state, dispatch }: SideNavProps): JSX.Element {
           {song.get("songTitle")}
 
           <div className="metaDataPlacement">{song.get("artist")}</div>
+          <div className="metaDataPlacement">{song.get("album")}</div>
         </div>
       ))}
     </Section>
   );
 }
 
+// /** ------------------------------------- **
+//  * Song Search
+//  ** ------------------------------------- */
 
-/** ------------------------------------- **
- * Song Dashboard
- ** ------------------------------------- */
+function SongSearch({ state, dispatch }: SideNavProps): JSX.Element {
+  const [search, setSearch] = useState("");
+  let results: List<any> = state.get("results", List());
 
-function SongsModalWindow({ state, dispatch }: SideNavProps): JSX.Element {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
-    <>
-    <button type="button" className="button" onClick={handleShow}>
-      Playlist Dashboard
-    </button>
-{/* 
-    <div className="modalWindow" show={show} onHide></div> */}
+    <div>
+      <div className="songSearchArea">
+        <div className="songSearchTitle">Playlist Search</div>
+        <input
+          className="userInputBox"
+          type="text"
+          placeholder="Song Title"
+          onChange={(newEvent) => setSearch(newEvent.target.value)}
+        />
 
-   </>
+        <button
+          className="searchBtn"
+          style={{ margin: "15px 0" }}
+          onClick={() => {
+            dispatch(new DispatchAction("SONG_SEARCH", { songTitle: search }));
+            //results.push(state.get("results", List()));
+          }}
+        >
+          Search
+        </button>
+      </div>
+
+      {results ? ( // check results, if found dispatchAction (get id, display info)
+        <Section title="Results">
+          {results.map((song) => (
+            <div
+              key={song.get("id")}
+              className="f6 pointer underline flex items-center no-underline i dim"
+              onClick={() =>
+                dispatch(
+                  new DispatchAction("PLAY_SONG", { id: song.get("id") })
+                )
+              }
+            >
+              <div className="songLine">
+                <Music20 className="mr1" />
+                {song.get("songTitle")}
+              </div>
+              <div className="metaDataPlacement">{song.get("artist")}</div>
+            </div>
+          ))}
+        </Section>
+      ) : (
+        <Section title="Results">
+          <h1>Results not found!</h1>
+        </Section>
+      )}
+    </div>
   );
 }
 
