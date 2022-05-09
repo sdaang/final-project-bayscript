@@ -5,6 +5,12 @@ import * as Tone from 'tone';
 // project imports
 import { Visualizer } from '../Visualizers';
 
+/** ------------------------------------------------------------------------ **
+ * Contains implementation of components for Ellipse Visualizer.
+ * References: https://p5js.org/
+ * Author: Nyan Lin Tun
+ ** ------------------------------------------------------------------------ */
+
 //test
 export const EllipseVisual = new Visualizer(
     'EllipseVisual', (p5: P5, analyzer: Tone.Analyser) => {
