@@ -126,20 +126,25 @@ export function appReducer(state: AppState, action: DispatchAction): AppState {
         let searchBar = (input: any): boolean => {
           let userInput = args.get("songTitle").toUpperCase();
           let songTitle = input.get("songTitle").toUpperCase();
+          let artistName = input.get("artist").toUpperCase();
+          let albumMame = input.get("album").toUpperCase();
 
           if (songTitle.includes(userInput)) {
             return true;
-          } else {
-            return false;
+          } else if (artistName.includes(userInput)) {
+            return true;
+          } else if (albumMame.includes(userInput)) {
+            return true;
           }
 
+          return false;
         };
 
         const searchResults = state
-        .get("songs").filter((s: any) => searchBar(s));
+          .get("songs")
+          .filter((s: any) => searchBar(s));
 
-        return state
-        .set("results", searchResults);
+        return state.set("results", searchResults);
       }
 
       default:
