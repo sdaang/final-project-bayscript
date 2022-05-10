@@ -46,7 +46,6 @@ export function XylophoneKey({
         // CSS
         top: 0,
         left: `${index * 4}rem`,
-        //zIndex: minor ? 1 : 0,
         zIndex: 0,
         width: "2rem",
         marginLeft: 0,
@@ -56,7 +55,7 @@ export function XylophoneKey({
 }
 
 // eslint-disable-next-line
-function xylophoneKeyWithoutJSX({
+function XylophoneKeyWithoutJSX({
   note,
   synth,
   minor,
@@ -87,7 +86,7 @@ function xylophoneKeyWithoutJSX({
   );
 }
 
-function xylophoneType({ title, onClick, active }: any): JSX.Element {
+function XylophoneType({ title, onClick, active }: any): JSX.Element {
   return (
     <div
       onClick={onClick}
