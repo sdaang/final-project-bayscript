@@ -190,11 +190,11 @@ function SongSearch({ state, dispatch }: SideNavProps): JSX.Element {
   return (
     <div>
       <div className="songSearchArea">
-        <div className="songSearchTitle">Playlist Search</div>
+        <div className="songSearchTitle">Song Search</div>
         <input
           className="userInputBox"
           type="text"
-          placeholder="Song Title"
+          placeholder="Title/Artist/Album"
           onChange={(newEvent) => setSearch(newEvent.target.value)}
         />
 
