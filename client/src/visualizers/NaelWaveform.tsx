@@ -6,7 +6,7 @@ import * as Tone from 'tone';
 import { Visualizer } from '../Visualizers';
 
 export const NaelWaveformVisualizer = new Visualizer(
-  'Nael Waveform',
+  'Nael Waveform - Nael-Yun',
 
   (p5: P5, analyzer: Tone.Analyser) => {
     const width = window.innerWidth;

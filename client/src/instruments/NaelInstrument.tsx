@@ -222,4 +222,4 @@ function naelInstrument({ synth, setSynth }: InstrumentProps): JSX.Element {
   );
 }
 
-export const NaelInstrument = new Instrument('Kalimba', naelInstrument);
+export const NaelInstrument = new Instrument('Kalimba - Nael-Yun', naelInstrument);
