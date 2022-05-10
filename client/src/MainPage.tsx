@@ -11,7 +11,6 @@ import { SideNav } from './SideNav';
 import { InstrumentContainer } from './Instruments';
 import { VisualizerContainer } from './Visualizers';
 
-
 /** ------------------------------------------------------------------------ **
  * MainPage component
  ** ------------------------------------------------------------------------ */
@@ -94,7 +93,7 @@ export function MainPage({ state, dispatch }: PanelProps): JSX.Element {
 function ShowWelcomePanel(): JSX.Element {
   return (
     <div
-      className="absolute right-0 bottom-0 top-0 flex flex-column items-center justify-center"
+      className="mainPage"
       style={{ left: '16rem' }}
     >
       <div className="mw6 lh-copy mb4">
