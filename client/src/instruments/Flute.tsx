@@ -147,7 +147,7 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
     setSynth((oldSynth) => {
       oldSynth.disconnect();
       return new Tone.Synth({
-        volume: -2,
+        volume: 4,
         portamento: 0,
         detune: 0,
         envelope: {
