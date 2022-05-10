@@ -147,7 +147,7 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
     setSynth((oldSynth) => {
       oldSynth.disconnect();
       return new Tone.Synth({
-        volume: 4,
+        volume: -2,
         portamento: 0,
         detune: 0,
         envelope: {
@@ -223,4 +223,4 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
   );
 }
 
-export const FluteInstrument = new Instrument("Flute", Flute);
+export const FluteInstrument = new Instrument("Flute - sdaang", Flute);
