@@ -27,6 +27,7 @@ E3 E4 E4 D4 A3 A3 F3 F3 E4 E4 E4 D4 A3 A3 F3 F3 F3
 C4 C4 C4 Bb3 F3 F3 D3 D3 C4 C4 C4 Bb3 F3 F3 D3 D3 D3
 Bb3 Bb3 Bb3 A3 F3 F3 D3 D3 Bb2 Bb2 Bb2 Bb2 Bb2 Bb2 C3 C3
 A2 A2 A2 Bb2 Bb2 C3 C3 D3 D3 E3 E3 F3 F3 G3 G3 A3 A3
-')
+');
 
-
+INSERT INTO songs (id, song_title, artist, notes) 
+VALUES (4, 'a aaa', 'aaaaan','E5 E5 F5 G5 G5 F5 E5 D5 C5 C5 D5 E5 E5 D5 D5 D5');
