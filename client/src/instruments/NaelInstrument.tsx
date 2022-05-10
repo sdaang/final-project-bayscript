@@ -149,7 +149,7 @@ function naelInstrument({ synth, setSynth }: InstrumentProps): JSX.Element {
       return new Tone.Synth({
         volume: 8,
         detune: 3,
-        portamento: 2,
+        portamento: 0,
         envelope: {
           attack: 0.05,
           attackCurve: "exponential",
