@@ -19,7 +19,7 @@ import { Visualizer } from "../Visualizers";
 // https://www.youtube.com/watch?v=Bk8rLzzSink&t=9s   (more info on sound synthesis (e.g. amplitude))
 
 export const WaveformVisualizerFlute = new Visualizer(
-  "Flute Waveform",
+  "Flute Visualizer - sdaang",
   (p5: P5, analyzer: Tone.Analyser) => {
     // Visualizer Window Attributes
     const width = window.innerWidth;

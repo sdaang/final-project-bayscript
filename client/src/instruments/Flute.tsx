@@ -114,7 +114,7 @@ function PianoType({ title, onClick, active }: any): JSX.Element {
     <div
       onClick={onClick}
       className={classNames(
-        "dim pointer ph2 pv1 ba mr2 br1 fw7 fluteOscillatorBtns",
+        "dim pointer ph2 pv1 ba mr2 br1 fw7 fluteOscillatorBtns", // oscillator btns
         {
           //CSS for buttons
           "b--black black ": active,
@@ -143,11 +143,11 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
     { note: "B", idx: 6 },
   ]);
 
-  const setOscillator = (newType: Tone.ToneOscillatorType) => {
+  const setOscillator = () => {
     setSynth((oldSynth) => {
       oldSynth.disconnect();
       return new Tone.Synth({
-        volume: 4,
+        volume: -2,
         portamento: 0,
         detune: 0,
         envelope: {
@@ -176,16 +176,18 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
     });
   };
 
-  const oscillators: List<OscillatorType> = List([
-    'sine',
-    'sine10',
-    'amsine10',
-    'fmsawtooth3',
-    'sawtooth',
-    'square',
-    'triangle',
-    'amtriangle10',
-  ]) as List<OscillatorType>;
+  useEffect(setOscillator, [setSynth]);
+
+  // const oscillators: List<OscillatorType> = List([
+  //   'sine',
+  //   'sine10',
+  //   'amsine10',
+  //   'fmsawtooth3',
+  //   'sawtooth',
+  //   'square',
+  //   'triangle',
+  //   'amtriangle10',
+  // ]) as List<OscillatorType>;
 
   return (
     <div className="pv4" id="flute">
@@ -211,14 +213,7 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
         )}
       </div>
       <div className={"pl4 pt4 flex"}>
-        {oscillators.map((o) => (
-          <PianoType
-            key={o}
-            title={o}
-            onClick={() => setOscillator(o)}
-            active={synth?.oscillator.type === o}
-          />
-        ))}
+ 
       </div>
       {/* <div className="pv6" id="flute">
 
@@ -228,4 +223,4 @@ function Flute({ synth, setSynth }: InstrumentProps): JSX.Element {
   );
 }
 
-export const FluteInstrument = new Instrument("Flute", Flute);
+export const FluteInstrument = new Instrument("Flute - sdaang", Flute);
