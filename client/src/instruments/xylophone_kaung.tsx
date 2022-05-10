@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 
 // project imports
 import { Instrument, InstrumentProps } from "../Instruments";
+import { url } from "inspector";
 
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Piano.
@@ -38,12 +39,13 @@ export function XylophoneKey({
     <div
       onMouseDown={() => synth?.triggerAttack(`${note}`)} // Question: what is `onMouseDown`?
       onMouseUp={() => synth?.triggerRelease("+0.1")} // Question: what is `onMouseUp`?
-      className={classNames("ba pointer absolute dim", {
+      className={classNames("ba absolute dim", {
         //'bg-black black h3': minor, // minor keys are black
         "black bg-red h4": note,
       })}
       style={{
         // CSS
+        cursor: "crosshair",
         top: 0,
         left: `${index * 4}rem`,
         zIndex: 0,
@@ -150,7 +152,7 @@ function Xylophone({ synth, setSynth }: InstrumentProps): JSX.Element {
   useEffect(setOscillator, [setSynth]);
 
   return (
-    <div className="pv4">
+    <div className="pv4" style={{cursor: 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/stick.svg)'}}>
       <div className="relative dib h4 w-100 ml4">
         {Range(3, 5).map((octave) =>
           keys.map((key) => {
