@@ -13,7 +13,7 @@ import { Visualizer } from '../Visualizers';
 
 //test
 export const EllipseVisual = new Visualizer(
-    'EllipseVisual', (p5: P5, analyzer: Tone.Analyser) => {
+    'EllipseVisual - nyanjustint', (p5: P5, analyzer: Tone.Analyser) => {
         const width = 300;
         const height = 100;
         const colors = ['purple', 'green', 'yellow', 'red']
