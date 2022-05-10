@@ -77,6 +77,10 @@ html, body, #root {
   animation-timing-function: linear;
 }
 
+.stick{
+  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/stick.svg);
+}
+
 @-moz-keyframes spin {
   from { -moz-transform: rotate(0deg); }
   to { -moz-transform: rotate(360deg); }
