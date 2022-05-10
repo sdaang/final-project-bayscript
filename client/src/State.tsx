@@ -9,9 +9,10 @@ import { ViolinInstrument } from './instruments/violin_nyan';
 
 import { WaveformVisualizer } from './visualizers/Waveform';
 import { WaveformVisualizerFlute } from './visualizers/Flute_Waveform';
-import { CircleVisualizer } from './visualizers/Circle';
+import { CircleVisualizer } from './visualizers/Circle_Kaung';
 import { NaelWaveformVisualizer } from './visualizers/NaelWaveform';
 import { EllipseVisual } from './visualizers/visual_nyan';
+import { xylophoneInstrument } from './instruments/xylophone_kaung';
 
 
 
@@ -24,7 +25,7 @@ export type AppState = Map<string, any>;           // similar to { [id: string]:
  * Start with the default piano instrument.
  * Add your instruments to this list.
  */
-const instruments = List([PianoInstrument, FluteInstrument, NaelInstrument, ViolinInstrument]);     // similar to Instrument[]
+const instruments = List([PianoInstrument, FluteInstrument, NaelInstrument, ViolinInstrument, xylophoneInstrument]);     // similar to Instrument[]
 
 /**
  * Start with the default waveform visualizer.
