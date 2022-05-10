@@ -20,6 +20,10 @@
     box-shadow: 10px 5px 5px black;
 }
 
+.sanic{
+    background-image: url("./img/flute_render.png");
+}
+
 
 .metaDataPlacement{
     color:gray;
@@ -107,6 +111,7 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(203, 247, 247);
+    background-image: url("./img/twerk.gif");
 
 
 
