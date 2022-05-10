@@ -37,25 +37,26 @@ export function PianoKey({
     // 3. The curly braces `{` and `}` should remind you of string interpolation.
     <div
       onMouseDown={() => synth?.triggerAttack(`${note}`)} // Question: what is `onMouseDown`?
-      onMouseUp={() => synth?.triggerRelease('+0.25')} // Question: what is `onMouseUp`?
+      onMouseUp={() => synth?.triggerRelease('+0.1')} // Question: what is `onMouseUp`?
       className={classNames('ba pointer absolute dim', {
-        'bg-black black h3': minor, // minor keys are black
-        'black bg-white h4': !minor, // major keys are white
+        //'bg-black black h3': minor, // minor keys are black
+        'black bg-red h4': note,
       })}
       style={{
         // CSS
         top: 0,
-        left: `${index * 2}rem`,
-        zIndex: minor ? 1 : 0,
-        width: minor ? '1.5rem' : '2rem',
-        marginLeft: minor ? '0.25rem' : 0,
+        left: `${index * 4}rem`,
+        //zIndex: minor ? 1 : 0,
+        zIndex: 0,
+        width: '2rem',
+        marginLeft: 0,
       }}
     ></div>
   );
 }
 
 // eslint-disable-next-line
-function PianoKeyWithoutJSX({
+function xylophoneKeyWithoutJSX({
   note,
   synth,
   minor,
@@ -71,7 +72,7 @@ function PianoKeyWithoutJSX({
       onMouseDown: () => synth?.triggerAttack(`${note}`),
       onMouseUp: () => synth?.triggerRelease('+0.25'),
       className: classNames('ba pointer absolute dim', {
-        'bg-black black h3': minor,
+        //'bg-black black h3': minor,
         'black bg-white h4': !minor,
       }),
       style: {
@@ -86,7 +87,7 @@ function PianoKeyWithoutJSX({
   );
 }
 
-function PianoType({ title, onClick, active }: any): JSX.Element {
+function xylophoneType({ title, onClick, active }: any): JSX.Element {
   return (
     <div
       onClick={onClick}
@@ -157,9 +158,9 @@ function Xylophone({ synth, setSynth }: InstrumentProps): JSX.Element {
   return (
     <div className="pv4">
       <div className="relative dib h4 w-100 ml4">
-        {Range(2, 7).map(octave =>
+        {Range(3, 5).map(octave =>
           keys.map(key => {
-            const isMinor = key.note.indexOf('b') !== -1;
+            const isMinor = false;
             const note = `${key.note}${octave}`;
             return (
               <PianoKey
